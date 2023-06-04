@@ -20,7 +20,7 @@ function PopupWithForm({title, name, children, isOpen, onClose, buttonText, onSu
             <h2 className="popup__name">
               {title}
             </h2>
-            <form className="popup__form" name={name} noValidate onSubmit={handleSubmit}>
+            <form className="popup__form" name={name} onSubmit={handleSubmit}>
               {children}
               <button type="submit" className="popup__save-button">{buttonText}</button>
             </form>

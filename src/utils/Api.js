@@ -3,7 +3,7 @@ class Api{
         this._url = settings.url
         this._headers = settings.headers
     }
-    _checkPesponse(res) {
+    _checkResponse(res) {
         if (res.ok) {
             return res.json()
         }
@@ -15,7 +15,7 @@ class Api{
             method: 'GET',
             headers: this._headers
         })
-            .then(this._checkPesponse)
+            .then(this._checkResponse)
             
     }
 
@@ -24,7 +24,7 @@ class Api{
             method: 'GET',
             headers: this._headers
         })
-        .then(this._checkPesponse)
+        .then(this._checkResponse)
     }
 
     changeeProfileInfo(data) {
@@ -36,7 +36,7 @@ class Api{
                 about: data.about
             })
         })
-        .then(this._checkPesponse)
+        .then(this._checkResponse)
     }
 
     addNewCard(data) {
@@ -48,7 +48,7 @@ class Api{
                 link: data.link
             })
         })
-        .then(this._checkPesponse)
+        .then(this._checkResponse)
     }
 
     removeCard(id) {
@@ -56,7 +56,7 @@ class Api{
             method: 'DELETE',
             headers: this._headers,
         })
-        .then(this._checkPesponse)
+        .then(this._checkResponse)
     }
 
     addLike(id) {
@@ -64,7 +64,7 @@ class Api{
             method: 'PUT',
             headers: this._headers,
         })
-        .then(this._checkPesponse)
+        .then(this._checkResponse)
     }
 
     removeLike(id) {
@@ -72,7 +72,7 @@ class Api{
             method: 'DELETE',
             headers: this._headers,
         })
-        .then(this._checkPesponse)
+        .then(this._checkResponse)
     }
 
     updateAvatar(avatar) {
@@ -83,7 +83,7 @@ class Api{
                 avatar: avatar
             })
         })
-        .then(this._checkPesponse)
+        .then(this._checkResponse)
     }
 }
 

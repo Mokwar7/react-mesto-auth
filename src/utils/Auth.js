@@ -4,7 +4,7 @@ export default class Auth {
         this._headers = settings.headers
     }
 
-    _checkPesponse(res) {
+    _checkResponse(res) {
         if (res.ok) {
             return res.json()
         }
@@ -20,7 +20,7 @@ export default class Auth {
                 'email': data.email
             })
         })
-            .then(this._checkPesponse)
+            .then(this._checkResponse)
     }
 
     signIn(data) {
@@ -32,7 +32,7 @@ export default class Auth {
                 'email': data.email
             })
         })
-            .then(this._checkPesponse)
+            .then(this._checkResponse)
     }
     checkJWT(token) {
         return fetch(`${this._url}users/me`, {
@@ -42,7 +42,7 @@ export default class Auth {
                 "Authorization" : `Bearer ${token}`
             },
         })
-            .then(this._checkPesponse)
+            .then(this._checkResponse)
     }
 }
 
